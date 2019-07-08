@@ -38,7 +38,9 @@ public class ApprovalStateMachineBuilder {
                 .and()
                 .withExternal()
                 .source(States.UNDERAPPROVING).target(States.REJECTED)
-                .event(Events.REJECT);
+                .event(Events.REJECT).and().withExternal().source(States.UNDERAPPROVING).target(States.UNDERAPPROVING)
+                .event(Events.LOOP)
+        ;
 
         return builder.build();
     }

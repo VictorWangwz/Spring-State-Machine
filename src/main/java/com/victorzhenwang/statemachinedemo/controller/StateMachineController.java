@@ -60,7 +60,7 @@ public class StateMachineController {
         stateMachine.sendEvent(message1);
 
         Message<Events> message2 = MessageBuilder
-                .withPayload(Events.APPROVE)
+                .withPayload(Events.LOOP)
                 .setHeader("flow", flow)
                 .build();
         stateMachine.sendEvent(message2);

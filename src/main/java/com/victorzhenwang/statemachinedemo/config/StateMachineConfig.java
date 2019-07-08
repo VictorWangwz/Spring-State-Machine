@@ -52,7 +52,10 @@ public class StateMachineConfig
                 .source(States.UNDERAPPROVING).target(States.APPROVED).event(Events.APPROVE)
                 .and()
                 .withExternal()
-                .source(States.UNDERAPPROVING).target(States.REJECTED).event(Events.REJECT);
+                .source(States.UNDERAPPROVING).target(States.REJECTED).event(Events.REJECT)
+                .and()
+                .withExternal()
+                .source(States.UNDERAPPROVING).target(States.UNDERAPPROVING).event(Events.LOOP);
     }
 
     @Bean

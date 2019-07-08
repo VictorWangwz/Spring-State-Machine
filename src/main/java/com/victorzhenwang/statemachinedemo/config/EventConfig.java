@@ -28,6 +28,10 @@ public class EventConfig {
     public void approve(Message<ApprovalFlow> message) throws Exception {
         printLog(message);
     }
+    @OnTransition(source = "UNDERAPPROVING", target = "UNDERAPPROVING")
+    public void loop(Message<ApprovalFlow> message) throws Exception {
+        printLog(message);
+    }
 
     @OnTransition(source = "UNDERAPPROVING", target = "REJECTED")
     public void reject(Message<ApprovalFlow> message) throws Exception{
