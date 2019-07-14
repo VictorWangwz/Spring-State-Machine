@@ -1,17 +1,18 @@
 package com.victorzhenwang.statemachinedemo;
 
+import com.victorzhenwang.statemachinedemo.model.ApprovalFlow;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class StatemachinedemoApplicationTests {
+
+public class StatemachinedemoApplicationTests extends BaseTest{
+
+	@Autowired
+	private ApprovalFlow flow;
 
 	@Test
-	public void contextLoads() {
-
+	public void flowTest() {
+		System.out.println("FLow: "+flow.getId());
 	}
 
 }

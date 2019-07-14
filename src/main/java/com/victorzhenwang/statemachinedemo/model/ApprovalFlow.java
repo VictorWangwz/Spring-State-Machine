@@ -1,7 +1,11 @@
 package com.victorzhenwang.statemachinedemo.model;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 
+@Component
 public class ApprovalFlow {
 
     private String id;
@@ -9,6 +13,12 @@ public class ApprovalFlow {
     private String state;
 
     private List<ApprovalStage> stages;
+
+    public ApprovalFlow(){
+        super();
+        this.id = "test";
+        this.state = "good";
+    }
 
     public ApprovalFlow(String id, String state, String[][] stages) {
         super();
